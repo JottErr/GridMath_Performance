@@ -1,6 +1,7 @@
 from FlatGrid import FlatGrid
 from NestedGrid import NestedGrid
 from DictGrid import DictGrid
+from NestedNumpyGrid import NestedNumpyGrid as npNestedGrid
 from Curve import Curve
 from time import process_time
 
@@ -19,7 +20,9 @@ def test_performance(template_class, t_width, t_height, grid_class, g_width, g_h
 test_performance(NestedGrid, 9, 9, NestedGrid, 350, 350)
 test_performance(FlatGrid, 9, 9, FlatGrid, 350, 350)
 test_performance(DictGrid, 9, 9, DictGrid, 350, 350)
+test_performance(npNestedGrid, 9, 9, npNestedGrid, 350, 350)
 
 test_performance(NestedGrid, 57, 57, NestedGrid, 57, 57)
 test_performance(FlatGrid, 57, 57, FlatGrid, 57, 57)
 test_performance(DictGrid, 57, 57, DictGrid, 57, 57)
+test_performance(npNestedGrid, 57, 57, npNestedGrid, 57, 57)
