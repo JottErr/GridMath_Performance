@@ -17,12 +17,12 @@ def test_performance(template_class, t_width, t_height, grid_class, g_width, g_h
 	duration = process_time() - start
 	print(duration)
 
-test_performance(NestedGrid, 9, 9, NestedGrid, 350, 350)
-test_performance(FlatGrid, 9, 9, FlatGrid, 350, 350)
-test_performance(DictGrid, 9, 9, DictGrid, 350, 350)
-test_performance(npNestedGrid, 9, 9, npNestedGrid, 350, 350)
+test_performance(NestedGrid, 9, 9, NestedGrid, 600, 600)
+test_performance(FlatGrid, 9, 9, FlatGrid, 600, 600)
+test_performance(DictGrid, 9, 9, DictGrid, 600, 600)
+test_performance(npNestedGrid, 9, 9, npNestedGrid, 600, 600)
 
-test_performance(NestedGrid, 57, 57, NestedGrid, 57, 57)
-test_performance(FlatGrid, 57, 57, FlatGrid, 57, 57)
-test_performance(DictGrid, 57, 57, DictGrid, 57, 57)
-test_performance(npNestedGrid, 57, 57, npNestedGrid, 57, 57)
+test_performance(NestedGrid, 75, 75, NestedGrid, 75, 75)
+test_performance(FlatGrid, 75, 75, FlatGrid, 75, 75)
+test_performance(DictGrid, 75, 75, DictGrid, 75, 75)
+test_performance(npNestedGrid, 75, 75, npNestedGrid, 75, 75)
