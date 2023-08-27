@@ -3,13 +3,14 @@ extends Node
 
 func _ready() -> void:
 	var testcurve := mCurve.new(-1.0, 1.0, 0.0, 1.0)
-	
-	
+
 	test_performance(NestedGrid.new(9, 9), NestedGrid.new(600, 600), testcurve)
+	test_performance(NestedGridRect.new(9, 9), NestedGridRect.new(600, 600), testcurve)
 	test_performance(FlatGrid.new(9, 9), FlatGrid.new(600, 600), testcurve)
 	test_performance(DictGrid.new(9, 9), DictGrid.new(600, 600), testcurve)
-	
+
 	test_performance(NestedGrid.new(75, 75), NestedGrid.new(75, 75), testcurve)
+	test_performance(NestedGridRect.new(75, 75), NestedGridRect.new(75, 75), testcurve)
 	test_performance(FlatGrid.new(75, 75), FlatGrid.new(75, 75), testcurve)
 	test_performance(DictGrid.new(75, 75), DictGrid.new(75, 75), testcurve)
 
