@@ -48,6 +48,21 @@ func clear_grid() -> void:
 			grid[x + y * width] = 0.0
 
 
+## Get width of the grid in cells
+func get_width() -> int:
+	return width
+
+
+## Get height of the grid in cells
+func get_height() -> int:
+	return height
+
+
+## Get center cell of the grid in local coordinates
+func get_center() -> Vector2i:
+	return center
+
+
 ## Calculates a value for each cell in the grid that is within a specified 
 ## radius around a given position. A Curve is used to calculate the fall-off of 
 ## the values based on the distance of the cell from the position.

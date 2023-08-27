@@ -16,10 +16,10 @@ func _ready() -> void:
 
 
 func test_performance(template, grid, curve: mCurve) -> void:
-	template.radiate_value_around_position(template.center, template.center.x, curve)
+	template.radiate_value_around_position(template.get_center(), template.get_center(), curve)
 	var start := Time.get_ticks_usec()
-	for i in range(grid.width):
-		for j in range(grid.height):
+	for i in range(grid.get_width()):
+		for j in range(grid.get_height()):
 			grid.add_grid_at_pos(template, Vector2(i, j))
 	var duration := Time.get_ticks_usec() - start
 	print(duration / 1000000.0)

@@ -1,6 +1,7 @@
 class_name NestedGrid
 extends RefCounted
 
+
 var width: int ## Width of the grid in cells
 var height: int ## Height of the grid in cells
 var center: Vector2 ## Center cell of the grid
@@ -49,6 +50,21 @@ func clear_grid() -> void:
 	for x in range(width):
 		for y in range(height):
 			grid[x][y] = 0.0
+
+
+## Get width of the grid in cells
+func get_width() -> int:
+	return width
+
+
+## Get height of the grid in cells
+func get_height() -> int:
+	return height
+
+
+## Get center cell of the grid in local coordinates
+func get_center() -> Vector2i:
+	return center
 
 
 ## Calculates a value for each cell in the grid that is within a specified 

@@ -5,15 +5,11 @@ extends RefCounted
 ## Rectangle that stores position, width and height of the grid in cells as ints
 var rect: Rect2i
 var grid: Array[Array] ## Nested 2D Array that holds the values for each cell.
-var width: int : get = get_width #remove, add get_width to all Grids, change main
-var height: int : get = get_height #remove, add get_height to all Grids, change main
-var center: Vector2i : get = get_center #remove, add get_center to all Grids, change main
 
 
 func _init(p_width: int, p_height: int, position := Vector2i.ZERO) -> void:
 	rect = Rect2i(position.x, position.y, p_width, p_height)
 	grid = _create_new_grid()
-	center = rect.get_center() # is global (takes position into account), todo create local
 
 
 ## Creates a new grid structure of type [code]Array[Array][/code] with size of 
@@ -52,13 +48,16 @@ func clear_grid() -> void:
 		for y in range(rect.size.y):
 			grid[x][y] = 0.0
 
+
 ## Get width of the grid in cells
 func get_width() -> int:
 	return rect.size.x
 
+
 ## Get height of the grid in cells
 func get_height() -> int:
 	return rect.size.y
+
 
 ## Get center cell of the grid in local coordinates
 func get_center() -> Vector2i:
