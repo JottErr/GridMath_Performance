@@ -1,2 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
+# Godot exports
+bin/
+export_presets.cfg
