@@ -3,23 +3,25 @@ extends Node
 
 func _ready() -> void:
 	var testcurve := mCurve.new(-1.0, 1.0, 0.0, 1.0)
+	print("9x9 on every cell in 600x600")
+	print("NestedGrid: " + test_performance(NestedGrid.new(9, 9), NestedGrid.new(600, 600), testcurve))
+	print("NestedGridRect: " + test_performance(NestedGridRect.new(9, 9), NestedGridRect.new(600, 600), testcurve))
+	print("FlatGrid: " + test_performance(FlatGrid.new(9, 9), FlatGrid.new(600, 600), testcurve))
+	print("FlatGridRect: " + test_performance(FlatGridRect.new(9, 9), FlatGridRect.new(600, 600), testcurve))
+	print("DictGrid: " + test_performance(DictGrid.new(9, 9), DictGrid.new(600, 600), testcurve))
+	print("\n75x75 on every cell in 75x75")
+	print("NestedGrid: " + test_performance(NestedGrid.new(75, 75), NestedGrid.new(75, 75), testcurve))
+	print("NestedGridRect: " + test_performance(NestedGridRect.new(75, 75), NestedGridRect.new(75, 75), testcurve))
+	print("FlatGrid: " + test_performance(FlatGrid.new(75, 75), FlatGrid.new(75, 75), testcurve))
+	print("FlatGridRect: " + test_performance(FlatGridRect.new(75, 75), FlatGridRect.new(75, 75), testcurve))
+	print("DictGrid: " + test_performance(DictGrid.new(75, 75), DictGrid.new(75, 75), testcurve))
 
-	test_performance(NestedGrid.new(9, 9), NestedGrid.new(600, 600), testcurve)
-	test_performance(NestedGridRect.new(9, 9), NestedGridRect.new(600, 600), testcurve)
-	test_performance(FlatGrid.new(9, 9), FlatGrid.new(600, 600), testcurve)
-	test_performance(DictGrid.new(9, 9), DictGrid.new(600, 600), testcurve)
 
-	test_performance(NestedGrid.new(75, 75), NestedGrid.new(75, 75), testcurve)
-	test_performance(NestedGridRect.new(75, 75), NestedGridRect.new(75, 75), testcurve)
-	test_performance(FlatGrid.new(75, 75), FlatGrid.new(75, 75), testcurve)
-	test_performance(DictGrid.new(75, 75), DictGrid.new(75, 75), testcurve)
-
-
-func test_performance(template, grid, curve: mCurve) -> void:
-	template.radiate_value_around_position(template.get_center(), template.get_center(), curve)
+func test_performance(template, grid, curve: mCurve) -> String:
+	template.radiate_value_around_position(template.get_center(), template.get_center().x, curve)
 	var start := Time.get_ticks_usec()
 	for i in range(grid.get_width()):
 		for j in range(grid.get_height()):
 			grid.add_grid_at_pos(template, Vector2(i, j))
 	var duration := Time.get_ticks_usec() - start
-	print(duration / 1000000.0)
+	return str(duration / 1000000.0)
