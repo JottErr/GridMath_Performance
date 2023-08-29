@@ -2,4 +2,20 @@
 
 ## Project Overview
 
-This repository contains a Godot project and several python and C++ files, all aimed at addressing the challenge of efficiently adding matrices of different sizes with positional offsets. The project focuses on optimizing matrix calculations in Godot, exploring various data structures and algorithms to achieve the best performance.
+This repository contains a Godot project and several python and C++ files, all aimed at addressing the challenge of efficiently adding matrices of different sizes with positional offsets. Through meticulous exploration, the project is dedicated to optimizing matrix calculations in Godot, exploring various data structures and algorithms in different languages to compare their performance.
+
+## Problem Statement
+
+Matrix addition serves as a cornerstone in game-related calculations. Usually, matrices have to be of the same size to be added together. However, I recently encountered a scenario where I had to add matrices of different sizes and with positional offsets. Godot lacked an out-of-the-box solution for this, so I decided to make one.
+Implementing this operation in Godot's scripting language, GDScript, involves a two-step process. First, determining the overlapping area of the matrices and subsequently adding the corresponding values within this intersection. 
+Despite my appreciation for GDScript's user-friendly and rapid development capabilities, it's essential to acknowledge its relative performance limitations in certain scenarios like when dealing with nested loops. This project delves into this issue by meticulously comparing the performance of nested loops across GDScript, Python, and C++. Through this comparison, the project aims to obtain valuable insights into the performance of nested loop operations in various programming contexts needed to solve the immediate problem in an efficient way.
+
+## Approach
+
+The objective is to compare and optimize different methods for adding matrices. To achieve this, the following approach was undertaken:
+
+1. **Data Structure Evaluation in Godot**: The impact of data structure choices on performance was a primary focus. Various versions of a `Grid` class were crafted, utilizing a dictionary, a one-dimensional array, or a two-dimensional array structures to house matrix values.
+2. **Intersection Algorithm in Godot**: For each matrix addition operation, the initial task was to identify the overlapping regions between the matrices. A custom intersection algorithm was devised. The performance of this custom algorithms was compared with the intersection method provided by Godot's `Rect2i` class, a C++ implementation.
+3. **Python Naive Replication**: To gauge performance variations in a distinct context, the Godot classes for evaluating data structure efficiency were reimagined in Python using a straightforward approach, without external packages.
+4. **Numpy Vectorization**: Leveraging the power of the Python numerical computing library, Numpy, data structures were vectorized. This vectorization was subsequently evaluated against previous implementations, highlighting potential performance enhancements.
+5. **C++ Implementation**: Finally to compare the results of dynamic languages to the optimization of a compiled language, a specific class employing a one-dimensional array was reimplemented in C++.
