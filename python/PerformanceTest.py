@@ -16,15 +16,18 @@ def test_performance(template, grid, curve):
 	print(duration)
 
 curve = Curve(-1.0, 1.0, 0.0, 1.0)
-
-test_performance(NestedGrid(9, 9), NestedGrid(600, 600), curve)
-test_performance(FlatGrid(9, 9), FlatGrid(600, 600), curve)
-test_performance(DictGrid(9, 9), DictGrid(600, 600), curve)
-test_performance(FlatDictGrid(9, 9), FlatDictGrid(600, 600), curve)
-test_performance(npNestedGrid(9, 9), npNestedGrid(600, 600), curve)
-
-test_performance(NestedGrid(75, 75), NestedGrid(75, 75), curve)
-test_performance(FlatGrid(75, 75), FlatGrid(75, 75), curve)
-test_performance(DictGrid(75, 75), DictGrid(75, 75), curve)
-test_performance(FlatDictGrid(75, 75), FlatDictGrid(75, 75), curve)
-test_performance(npNestedGrid(75, 75), npNestedGrid(75, 75), curve)
+print("NestedGrid")
+for i in range(30):
+	test_performance(NestedGrid(9, 9), NestedGrid(600, 600), curve)
+print("FlatGrid")
+for i in range(30):
+	test_performance(FlatGrid(9, 9), FlatGrid(600, 600), curve)
+print("DictGrid")
+for i in range(30):
+	test_performance(DictGrid(9, 9), DictGrid(600, 600), curve)
+print("FlatDictGrid")
+for i in range(30):
+	test_performance(FlatDictGrid(9, 9), FlatDictGrid(600, 600), curve)
+print("npNestedGrid")
+for i in range(30):
+	test_performance(npNestedGrid(9, 9), npNestedGrid(600, 600), curve)

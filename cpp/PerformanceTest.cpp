@@ -17,13 +17,21 @@ void performance_test(int size_templ, int size_grid, const Curve &curve) {
 	}
 	auto end = std::chrono::high_resolution_clock::now();
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-	std::cout << "Laufzeit: " << duration << " Mikrosekunden" << std::endl;
+	std::cout << duration / 1000000.0 << std::endl;
 }
 
 int main() {
 	const Curve testcurve = { -1.0f, 1.0f, 0.0f, 1.0f };
-	performance_test<NestedGrid>(9, 600, testcurve);
-	performance_test<FlatGrid>(9, 600, testcurve);
+	
+	std::cout << "NestedGrid" << std::endl;
+	for (int i = 0; i < 30; i++) {
+		performance_test<NestedGrid>(9, 600, testcurve);
+	}
+
+	std::cout << "FlatGrid" << std::endl;
+	for (int i = 0; i < 30; i++) {
+		performance_test<FlatGrid>(9, 600, testcurve);
+	}
 
 	char waiter;
 	std::cin >> waiter;
