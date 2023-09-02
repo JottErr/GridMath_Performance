@@ -1,3 +1,4 @@
+9x9 on every cell in 600x600
 NestedGrid
 10.1875
 10.125
