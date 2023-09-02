@@ -1,3 +1,4 @@
+C++, 9x9 on every cell in 600x600
 NestedGrid
 0.040211
 0.037682

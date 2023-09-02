@@ -1,4 +1,4 @@
-9x9 on every cell in 600x600
+GodotIntersection, 9x9 on every cell in 600x600
 NestedGrid
 0.675837
 0.667657

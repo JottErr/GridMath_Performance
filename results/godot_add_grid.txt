@@ -1,4 +1,4 @@
-9x9 on every cell in 600x600
+GodotEditor, 9x9 on every cell in 600x600
 NestedGrid
 19.393538
 19.101994
