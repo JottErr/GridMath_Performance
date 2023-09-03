@@ -9,9 +9,9 @@ func _ready() -> void:
 	print("FlatGrid")
 	for i in range(30):
 		print(test_performance(FlatGrid.new(9, 9), FlatGrid.new(600, 600), testcurve))
-	print("DictGrid")
+	print("FlatDictGrid")
 	for i in range(30):
-		print(test_performance(DictGrid.new(9, 9), DictGrid.new(600, 600), testcurve))
+		print(test_performance(FlatDictGrid.new(9, 9), FlatDictGrid.new(600, 600), testcurve))
 
 
 func test_performance(template, grid, curve: mCurve) -> String:

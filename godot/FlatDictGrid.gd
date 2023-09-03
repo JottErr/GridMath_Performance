@@ -1,4 +1,4 @@
-class_name DictGrid
+class_name FlatDictGrid
 extends RefCounted
 
 
@@ -91,7 +91,7 @@ func radiate_value_around_position(position: Vector2, radius: float, curve: mCur
 ## Adds a another grid to this grid. The specified position describes a cell in 
 ## this grid. The center of the other grid is located at that position. The 
 ## other grid is scaled by the magnitude. 
-func add_grid_at_pos(other_grid: DictGrid, position: Vector2, magnitude := 1.0) -> void:
+func add_grid_at_pos(other_grid: FlatDictGrid, position: Vector2, magnitude := 1.0) -> void:
 	#get local coords of topleft/botright cell of the source_map
 	var start_x: float = position.x - other_grid.center.x
 	var start_y: float = position.y - other_grid.center.y
