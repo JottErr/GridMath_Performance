@@ -19,3 +19,25 @@ The objective is to compare and optimize different methods for adding matrices. 
 3. **Python Naive Replication**: To gauge performance variations in a distinct context, the Godot classes for evaluating data structure efficiency were replicated in Python using a straightforward approach, without external packages.
 4. **Numpy Vectorization**: Leveraging the power of the Python numerical computing library, Numpy, data structures were vectorized. This vectorization was subsequently evaluated against previous implementations, highlighting potential performance enhancements.
 5. **C++ Implementation**: Finally, to identify the otimal data structure and to compare the results of dynamic languages to the optimization of a compiled language, the classes were reimplemented in C++.
+
+## Results
+
+Adding a 9x9 grid to every cell of a 600x600 grid. The center of the 9x9 grid is located at the target cell. Duration is the mean of 30 repetitions.
+
+| Language | Class | Duration |
+|----------|----------|----------|
+| GodotEditor  | FlatDictGrid  | 21.851 s  |
+| GodotEditor  | DictGrid  | 21.768 s  |
+| GodotEditor  | NestedGrid  | 19.812 s  |
+| GodotEditor  | FlatGrid  | 18.465 s  |
+| GodotExport  | FlatDictGrid  | 17.669 s  |
+| GodotExport  | DictGrid  | 17.121 s  |
+| GodotExport  | NestedGrid  | 16.132 s  |
+| GodotExport  | FlatGrid  | 14.111 s  |
+| Python  | FlatDictGrid  | 13.895 s  |
+| Python  | DictGrid  | 13.49 s  |
+| Python  | FlatGrid  | 12.288 s  |
+| Python  | NestedGrid  | 10.583 s  |
+| Python  | npNestedGrid  | 1.97 s  |
+| C++  | FlatGrid  | 0.045 s  |
+| C++  | NestedGrid  | 0.038 s |
