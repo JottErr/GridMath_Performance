@@ -24,6 +24,8 @@ The objective is to compare and optimize different methods for adding matrices. 
 
 Adding a 9x9 grid to every cell of a 600x600 grid. The center of the 9x9 grid is located at the target cell. Duration is the mean of 30 repetitions.
 
+![Adding a 9x9 grid to every cell of a 600x600 grid. The center of the 9x9 grid is located at the target cell. Duration is the mean of 30 repetitions.](./results/images/results_add_grid_avg_dur.png)
+
 | Language | Class | Duration |
 |----------|----------|----------|
 | GodotEditor  | FlatDictGrid  | 21.851 s  |
