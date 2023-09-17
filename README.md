@@ -22,7 +22,7 @@ The objective is to compare and optimize different methods for adding matrices. 
 
 ## Results
 
-Adding a 9x9 grid to every cell of a 600x600 grid. The center of the 9x9 grid is located at the target cell. Duration is the mean of 30 repetitions.
+A 9x9 grid and a 600x600 grid are created. The method add_grid_to_pos is called once for every cell on the 600x600 cell grid, placing the 9x9 grid with its center located at the target cell. This procedure is repeated 30 times and the mean of the duration is displayed.
 
 ![Adding a 9x9 grid to every cell of a 600x600 grid. The center of the 9x9 grid is located at the target cell. Duration is the mean of 30 repetitions.](./results/images/results_add_grid_avg_dur.png)
 
